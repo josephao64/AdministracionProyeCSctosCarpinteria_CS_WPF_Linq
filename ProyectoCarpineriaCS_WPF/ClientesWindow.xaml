@@ -1,0 +1,29 @@
+﻿<Page x:Class="ProyectoCarpineriaCS_WPF.ClientesWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Clientes" Height="700" Width="1300" Background="#E3D7BF">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+
+        <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="20" Padding="10">
+            <DataGrid x:Name="ClientesGrid" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                      AlternatingRowBackground="#F6F6F6" GridLinesVisibility="None">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" />
+                    <DataGridTextColumn Header="Teléfono" Binding="{Binding Telefono}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Border Background="White" BorderBrush="#CCCCCC" BorderThickness="1" Margin="20" Padding="10" Grid.Column="1">
+            <StackPanel>
+                <TextBlock Text="Clientes Frecuentes" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" />
+                <ListBox x:Name="ClientesFrecuentesListBox" Background="White" BorderThickness="0"
+                         ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Page>
